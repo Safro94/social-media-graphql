@@ -6,9 +6,14 @@ module.exports = {
   Query: {
     ...posts.Query,
   },
+
   Mutation: {
     ...posts.Mutation,
     ...users.Mutation,
     ...comments.Mutation,
+  },
+
+  Subscription: {
+    ...posts.Subscription,
   },
 };
