@@ -3,6 +3,10 @@
     margin: 0 auto;
 }
 
+.content {
+    padding: 10px 0;
+}
+
 @media (min-width: 768px) {
     .container {
         max-width: var(--sm-breakpoint);

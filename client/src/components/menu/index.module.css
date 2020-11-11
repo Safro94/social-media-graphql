@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 2px solid #ccc;
+}
+
+.rightLinks {
+    display: flex;
+    gap: 10px;
+}

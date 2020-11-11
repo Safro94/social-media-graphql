@@ -3,3 +3,16 @@
     --md-breakpoint: 992px;
     --lg-breakpoint: 1200px;
 }
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+}
