@@ -3,6 +3,7 @@ import { render } from 'react-dom';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
 import App from './components/app';
+import './index.css';
 
 const client = new ApolloClient({
   uri: process.env.REACT_APP_SERVER_URL,
