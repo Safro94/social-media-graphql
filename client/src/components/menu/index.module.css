@@ -1,11 +1,28 @@
 .container {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    padding: 8px 0;
     border-bottom: 2px solid #ccc;
 }
 
 .rightLinks {
     display: flex;
-    gap: 10px;
+}
+
+.link {
+    font-size: 18px;
+    padding: 10px 20px;
+    margin: 0 0 -2px;
+    border-bottom: 2px solid transparent;
+}
+
+.link:hover {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.active {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    font-weight: bold;
 }
