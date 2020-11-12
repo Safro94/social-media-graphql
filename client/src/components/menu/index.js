@@ -1,16 +1,31 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
+import { useAuth } from 'hooks/auth';
+
 import { HOME, LOGIN, REGISTER } from 'constants/routes';
 
 import classes from './index.module.css';
 
 export default () => {
   const location = useLocation();
+  const { user, logout } = useAuth();
+
   const [active, setActive] = useState(location.pathname);
 
-  return (
-    <div className={classes.container}>
+  const menu = user ? (
+    <>
+      <Link className={`${classes.link} ${classes.active}`} to={HOME}>
+        {user.username}
+      </Link>
+      <div className={classes.rightLinks}>
+        <span className={classes.link} onClick={logout}>
+          Logout
+        </span>
+      </div>
+    </>
+  ) : (
+    <>
       <Link
         className={`${classes.link} ${active === HOME && classes.active}`}
         to={HOME}
@@ -34,6 +49,8 @@ export default () => {
           Register
         </Link>
       </div>
-    </div>
+    </>
   );
+
+  return <div className={classes.container}>{menu}</div>;
 };
