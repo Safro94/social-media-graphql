@@ -8,6 +8,8 @@ import Register from 'pages/register';
 
 import { AuthProvider } from 'hooks/auth';
 
+import AuthRoute from 'utils/authRoute';
+
 import { HOME, LOGIN, REGISTER } from 'constants/routes';
 
 import classes from './index.module.css';
@@ -20,8 +22,8 @@ export default () => {
           <Menu />
           <div className={classes.content}>
             <Route exact path={HOME} component={Home} />
-            <Route exact path={LOGIN} component={Login} />
-            <Route exact path={REGISTER} component={Register} />
+            <AuthRoute exact path={LOGIN} component={Login} />
+            <AuthRoute exact path={REGISTER} component={Register} />
           </div>
         </div>
       </Router>
