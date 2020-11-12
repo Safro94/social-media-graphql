@@ -5,6 +5,7 @@ import { useMutation } from '@apollo/client';
 import Form from 'components/form';
 
 import { useForm } from 'hooks/form';
+import { useAuth } from 'hooks/auth';
 
 import { HOME } from 'constants/routes';
 
@@ -13,6 +14,7 @@ import classes from './index.module.css';
 
 export default () => {
   const history = useHistory();
+  const { login } = useAuth();
 
   const [errors, setErrors] = useState();
 
@@ -24,7 +26,8 @@ export default () => {
   });
 
   const [addUser, { loading }] = useMutation(REGISTER_USER, {
-    update(_, result) {
+    update(_, { data: { register: userData } }) {
+      login(userData);
       history.push(HOME);
     },
     onError(err) {
