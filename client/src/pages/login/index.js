@@ -70,15 +70,7 @@ export default () => {
           <Form.Submit type='submit'>Register</Form.Submit>
         </div>
 
-        {errors && (
-          <div className={classes.errors}>
-            <ul>
-              {Object.values(errors).map((error) => (
-                <li key={error}>{error}</li>
-              ))}
-            </ul>
-          </div>
-        )}
+        {errors && <Form.Errors errors={errors} />}
       </Form>
     </div>
   );

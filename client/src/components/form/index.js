@@ -34,6 +34,18 @@ Form.Input = ({ children, ...restProps }) => {
   );
 };
 
+Form.Errors = ({ errors, ...restProps }) => {
+  return (
+    <div {...restProps} className={classes.errors}>
+      <ul>
+        {Object.values(errors).map((error) => (
+          <li key={error}>{error}</li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
 Form.Submit = ({ children, ...restProps }) => {
   return (
     <button className={classes.submit} {...restProps}>

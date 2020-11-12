@@ -4,18 +4,3 @@
     align-items: center;
     gap: 15px;
 }
-
-.errors {
-    background: #FF9BA4;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    padding: 15px;
-}
-
-.errors > ul {
-    list-style-position: inside;
-}
-
-.errors > ul > li {
-    color: #772028;
-}
