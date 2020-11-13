@@ -4,6 +4,7 @@
     display: flex;
     flex-direction: column;
     padding: 10px;
+    align-self: flex-start;
 }
 
 .postData {
@@ -32,6 +33,13 @@
 .buttonsContainer {
     display: flex;
     gap: 10px;
+    justify-content: space-between;
+}
+
+.buttonsContainer > div:first-child {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
 }
 
 .buttonContainer {
@@ -39,6 +47,12 @@
     display: grid;
     grid-template-columns: 50px 30px;
     align-items: center;
+    justify-content: space-between;
+}
+
+.trashButtonContainer {
+    display: flex;
+    justify-content: flex-end;
 }
 
 .button {
@@ -47,6 +61,7 @@
     border: 0;
     border-bottom-left-radius: 4px;
     border-top-left-radius: 4px;
+    height: 100%;
 }
 
 .likeButton {
@@ -59,6 +74,11 @@
     background: white;
     border: 1px solid #3d3dd0;
     border-right: 0;
+}
+
+.trashButton {
+    background: red;
+    border-radius: 4px;
 }
 
 .icon {
