@@ -56,7 +56,6 @@
 }
 
 .button {
-    /* background: var(--primary-color); */
     padding: 5px 15px;
     border: 0;
     border-bottom-left-radius: 4px;
@@ -68,11 +67,6 @@
     background: white;
     border: 1px solid #3d3dd0;
     border-right: 0;
-}
-
-.trashButton {
-    background: red;
-    border-radius: 4px;
 }
 
 .icon {

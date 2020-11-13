@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaHeart, FaComment, FaTrash } from 'react-icons/fa';
+import { FaComment } from 'react-icons/fa';
 import { IconContext } from 'react-icons';
 import moment from 'moment';
 
 import LikeButton from 'components/likeButton';
+import DeleteButton from 'components/deleteButton';
 
 import { useAuth } from 'hooks/auth';
 
@@ -55,24 +56,7 @@ export default ({
             </div>
           </div>
         </div>
-        {user && user.username === username && (
-          <div
-            className={`${classes.buttonContainer} ${classes.trashButtonContainer}`}
-          >
-            <button
-              className={`${classes.button} ${classes.trashButton}`}
-              onClick={() => console.log('delete post')}
-            >
-              <IconContext.Provider
-                value={{ color: 'white', className: classes.icon }}
-              >
-                <div className={classes.iconContainer}>
-                  <FaTrash />
-                </div>
-              </IconContext.Provider>
-            </button>
-          </div>
-        )}
+        {user && user.username === username && <DeleteButton postId={id} />}
       </div>
     </div>
   );

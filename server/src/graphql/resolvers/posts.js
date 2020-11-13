@@ -15,7 +15,7 @@ module.exports = {
 
     async getPost(_, { postId }) {
       try {
-        const post = await Post.findOne({ postId });
+        const post = await Post.findById(postId);
         if (!post) throw new Error('Post not found');
 
         return post;

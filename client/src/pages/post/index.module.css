@@ -1,0 +1,9 @@
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.container > div {
+    max-width: 50%;
+    width: 100%;
+}
