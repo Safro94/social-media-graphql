@@ -1,0 +1,14 @@
+.container {
+    position: relative;
+}
+
+.comment {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.deleteButton {
+    position: absolute;
+    right: 2%;
+    top: 0;
+}
