@@ -64,12 +64,6 @@
     height: 100%;
 }
 
-.likeButton {
-    background: white;
-    border: 1px solid var(--primary-color);
-    border-right: 0;
-}
-
 .commentButton {
     background: white;
     border: 1px solid #3d3dd0;
@@ -100,11 +94,6 @@
     border-top-right-radius: 4px;
     font-size: 12px;
     font-weight: bold;
-}
-
-.likeCount {
-    border: 1px solid var(--primary-color);
-    color: var(--primary-color);
 }
 
 .commentCount {

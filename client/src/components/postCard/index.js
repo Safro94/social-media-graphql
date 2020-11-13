@@ -4,6 +4,8 @@ import { FaHeart, FaComment, FaTrash } from 'react-icons/fa';
 import { IconContext } from 'react-icons';
 import moment from 'moment';
 
+import LikeButton from 'components/likeButton';
+
 import { useAuth } from 'hooks/auth';
 
 import classes from './index.module.css';
@@ -12,7 +14,6 @@ export default ({
   post: { body, id, username, createdAt, likeCount, commentCount, likes },
 }) => {
   const { user } = useAuth();
-  const handleLikes = () => console.log('like');
 
   return (
     <div className={classes.container}>
@@ -33,21 +34,7 @@ export default ({
       <div className={classes.buttonsContainer}>
         <div>
           <div className={classes.buttonContainer}>
-            <button
-              className={`${classes.button} ${classes.likeButton}`}
-              onClick={handleLikes}
-            >
-              <IconContext.Provider
-                value={{ color: 'turquoise', className: classes.icon }}
-              >
-                <div className={classes.iconContainer}>
-                  <FaHeart />
-                </div>
-              </IconContext.Provider>
-            </button>
-            <div className={`${classes.count} ${classes.likeCount}`}>
-              <span>{likeCount}</span>
-            </div>
+            <LikeButton user={user} post={{ id, likes, likeCount }} />
           </div>
 
           <div className={classes.buttonContainer}>
@@ -74,7 +61,7 @@ export default ({
           >
             <button
               className={`${classes.button} ${classes.trashButton}`}
-              onClick={handleLikes}
+              onClick={() => console.log('delete post')}
             >
               <IconContext.Provider
                 value={{ color: 'white', className: classes.icon }}
