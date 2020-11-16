@@ -23,7 +23,7 @@ export default () => {
     password: '',
   });
 
-  const [loginUser, { loading }] = useMutation(LOGIN_USER, {
+  const [loginUser] = useMutation(LOGIN_USER, {
     update(_, { data: { login: userData } }) {
       login(userData);
       history.push(HOME);

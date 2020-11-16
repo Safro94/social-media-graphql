@@ -3,6 +3,7 @@ import { useQuery } from '@apollo/client';
 
 import PostCard from 'components/postCard';
 import PostForm from 'components/postForm';
+import Loading from 'components/loading';
 
 import { useAuth } from 'hooks/auth';
 
@@ -14,7 +15,7 @@ export default () => {
 
   const { loading, data: { getPosts: posts } = {} } = useQuery(GET_POSTS);
 
-  if (loading) return <h1>Loading...</h1>;
+  if (loading) return <Loading />;
 
   return (
     <div>

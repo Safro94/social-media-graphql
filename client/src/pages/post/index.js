@@ -5,6 +5,7 @@ import { useMutation, useQuery } from '@apollo/client';
 import PostCard from 'components/postCard';
 import Comment from 'components/comment';
 import Form from 'components/form';
+import Loading from 'components/loading';
 
 import { useAuth } from 'hooks/auth';
 import { useForm } from 'hooks/form';
@@ -42,7 +43,7 @@ export default () => {
     createComment();
   }
 
-  if (!data) return <h1>Loading...</h1>;
+  if (!data) return <Loading />;
 
   return (
     <div className={classes.container}>

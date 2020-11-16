@@ -25,7 +25,7 @@ export default () => {
     confirmPassword: '',
   });
 
-  const [addUser, { loading }] = useMutation(REGISTER_USER, {
+  const [addUser] = useMutation(REGISTER_USER, {
     update(_, { data: { register: userData } }) {
       login(userData);
       history.push(HOME);
