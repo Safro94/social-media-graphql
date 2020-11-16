@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client';
 
-const query = gql`
+const GET_POST = gql`
   query($postId: ID!) {
     getPost(postId: $postId) {
       id
@@ -22,4 +22,19 @@ const query = gql`
   }
 `;
 
-export default query;
+const ADD_COMENT = gql`
+  mutation($postId: ID!, $body: String!) {
+    createComment(postId: $postId, body: $body) {
+      id
+      comments {
+        id
+        body
+        username
+        createdAt
+      }
+      commentCount
+    }
+  }
+`;
+
+export { GET_POST, ADD_COMENT };
